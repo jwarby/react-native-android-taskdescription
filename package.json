@@ -1,0 +1,25 @@
+{
+  "name": "react-native-android-taskdescription",
+  "version": "0.0.1",
+  "description": "TaskDescription Android React Native module",
+  "main": "index.android.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwarby/reactnativeandroidtaskdescription.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "taskdescription",
+    "android"
+  ],
+  "author": "James Warwood <james.duncan.1991@googlemail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwarby/reactnativeandroidtaskdescription/issues"
+  },
+  "homepage": "https://github.com/jwarby/reactnativeandroidtaskdescription#readme"
+}
