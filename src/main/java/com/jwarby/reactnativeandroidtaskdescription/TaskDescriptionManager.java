@@ -19,13 +19,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-/*
- * @todo
- *   - run updates on UI thread?
- *   - single update method for setting TaskDescription
- *   - support setting icon (need to do URI -> Bitmap conversion somehow)
- *   - make module a no-op for SDK versions without TaskDescription support (< 21)
- */
 public class TaskDescriptionManager extends SimpleViewManager<ViewStub> {
 
   private static String REACT_CLASS = "TaskDescriptionAndroid";
