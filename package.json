@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwarby/reactnativeandroidtaskdescription.git"
+    "url": "git+https://github.com/jwarby/react-native-android-taskdescription.git"
   },
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
   "author": "James Warwood <james.duncan.1991@googlemail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jwarby/reactnativeandroidtaskdescription/issues"
+    "url": "https://github.com/jwarby/react-native-android-taskdescription/issues"
   },
-  "homepage": "https://github.com/jwarby/reactnativeandroidtaskdescription#readme"
+  "homepage": "https://github.com/jwarby/react-native-android-taskdescription#readme"
 }

@@ -24,7 +24,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   }
 ```
 
-![Change TaskDescription background color](screenshots/color.png)
+![Change TaskDescription background color](https://raw.githubusercontent.com/jwarby/react-native-android-taskdescription/master/screenshots/color.png)
 
 #### Change the text
 
@@ -44,7 +44,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   }
 ```
 
-![Change TaskDescription background color](screenshots/text.png)
+![Change TaskDescription text](https://raw.githubusercontent.com/jwarby/react-native-android-taskdescription/master/screenshots/text.png)
 
 #### Change color and text
 
@@ -65,7 +65,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   }
 ```
 
-![Change TaskDescription background color and text](screenshots/color-and-text.png)
+![Change TaskDescription background color and text](https://raw.githubusercontent.com/jwarby/react-native-android-taskdescription/master/screenshots/color-and-text.png)
 
 ## Installation and setup
 
