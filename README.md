@@ -1,6 +1,72 @@
 # React Native Android TaskDescription
 > Android TaskDescription component for React Native
 
+## Overview
+
+Allows configuration of the [Android TaskDescription](http://developer.android.com/reference/android/app/ActivityManager.TaskDescription.html), allowing
+you to change the background color and text of the TaskDescription shown on the recent apps Overview Cards.  Changing the icon is not yet supported.
+
+### Examples
+
+#### Change the color
+
+```javascript
+import TaskDescriptionAndroid from 'react-native-android-taskdescription'
+
+  // ...
+  render() {
+    return (
+      <View>
+        <TaskDescriptionAndroid background="#8fa224" />
+        <Text>My awesome app!</Text>
+      </View>
+    )
+  }
+```
+
+![Change TaskDescription background color](screenshots/color.png)
+
+#### Change the text
+
+```javascript
+import TaskDescriptionAndroid from 'react-native-android-taskdescription'
+
+  // ...
+  render() {
+    return (
+      <View>
+        <TaskDescriptionAndroid>
+          <Text>Super Awesome App</Text>
+        </TaskDescriptionAndroid>
+        <Text>My awesome app!</Text>
+      </View>
+    )
+  }
+```
+
+![Change TaskDescription background color](screenshots/text.png)
+
+#### Change color and text
+
+```javascript
+import TaskDescriptionAndroid from 'react-native-android-taskdescription'
+
+  // ...render
+  render() {
+    return (
+      <View>
+        <TaskDescriptionAndroid background="##5c34d2">
+          <Text>Super Awesome App</Text>
+        </TaskDescriptionAndroid>
+
+        <Text>My awesome app!</Text>
+      </View>
+    )
+  }
+```
+
+![Change TaskDescription background color and text](screenshots/color-and-text.png)
+
 ## Installation and setup
 
 ### Install
@@ -30,37 +96,18 @@ dependencies {
 ### Register module in `MainActivity.java`
 
 ```java
-  import com.frogeducationsdnbhd.react.views.ReactActionBarPackage;
+  import com.jwarby.reactnativetaskdescription.TaskDescriptionPackage; // <------- Add the import
 
   // ...
- /**
-  * A list of packages used by the app. If the app uses additional views
-  * or modules besides the default ones, add more packages here.
-  */
   @Override
   protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
       new MainReactPackage(),
-      new ReactActionBarPackage(this) // <------- add package, the 'this' is super important
+      new TaskDescriptionPackage(this) // <------- Add package - make sure you pass 'this' to the constructor!
     );
   }
 ```
 
-## Usage
+## Changelog
 
-```javascript
-import TaskDescription from 'react-native-android-taskdescription'
-
-  // ...
-
-  render() {
-    return (
-      <View>
-        <TaskDescription backgroundColor="#FF0000">
-          <Text>My Awesome Task</Text>
-        </TaskDescription>
-        ...
-      </View>
-    )
-  }
-```
+- `14th April 2016` - `v0.1.0` - First released version
