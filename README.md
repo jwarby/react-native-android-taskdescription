@@ -55,7 +55,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   render() {
     return (
       <View>
-        <TaskDescriptionAndroid background="##5c34d2">
+        <TaskDescriptionAndroid background="#5c34d2">
           <Text>Super Awesome App</Text>
         </TaskDescriptionAndroid>
 
