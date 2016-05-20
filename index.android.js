@@ -1,4 +1,8 @@
-import React, { Component, PropTypes, requireNativeComponent, Text, View } from 'react-native'
+import React, {
+  Component,
+  PropTypes
+} from 'react'
+import { requireNativeComponent, Text, View } from 'react-native'
 
 const TaskDescriptionAndroid = requireNativeComponent('TaskDescriptionAndroid', TaskDescription)
 
