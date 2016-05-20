@@ -110,4 +110,6 @@ dependencies {
 
 ## Changelog
 
-- `14th April 2016` - `v0.1.0` - First released version
+- `20th May 2016` - `v0.2.0` - Import React, Component and PropTypes from `react` instead of `react-native` as per changes in `react-native@0.25+`. 
+RN 0.25 spat out warnings about importing these from `react-native`, and 0.26 removed the warnings and just failed instead.
+- `14th Apr 2016` - `v0.1.0` - First released version
