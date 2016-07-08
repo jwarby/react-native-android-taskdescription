@@ -1,28 +1,34 @@
-import React, {
-  Component,
-  PropTypes
-} from 'react'
-import { requireNativeComponent, Text, View } from 'react-native'
+import { Component, PropTypes } from 'react'
+import { NativeModules } from 'react-native'
 
-const TaskDescriptionAndroid = requireNativeComponent('TaskDescriptionAndroid', TaskDescription)
+const TaskDescriptionModule = NativeModules.TaskDescriptionAndroid
 
 class TaskDescription extends Component {
-  static propTypes = Object.assign({}, View.propTypes, {
+  static propTypes = {
     backgroundColor: PropTypes.string,
-    children: PropTypes.instanceOf(Text)
-  })
+    label: PropTypes.string
+  }
+
+  componentDidMount() {
+    this.update()
+  }
+
+  componentDidUpdate(prevProps) {
+    this.update(prevProps)
+  }
+
+  update(prevProps = {}) {
+    if (prevProps.backgroundColor !== this.props.backgroundColor) {
+      TaskDescriptionModule.setBackgroundColor(this.props.backgroundColor)
+    }
+
+    if (prevProps.children !== this.props.label) {
+      TaskDescriptionModule.setLabel(this.props.label)
+    }
+  }
 
   render() {
-    const { backgroundColor, children } = this.props
-
-    const label = children ? children.props.children : null
-
-    return (
-      <TaskDescriptionAndroid
-        backgroundColor={backgroundColor}
-        label={label}
-      />
-    )
+    return null
   }
 }
 

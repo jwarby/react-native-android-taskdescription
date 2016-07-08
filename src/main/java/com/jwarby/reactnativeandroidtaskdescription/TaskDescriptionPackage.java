@@ -9,33 +9,26 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class TaskDescriptionPackage implements ReactPackage {
 
-  private Activity mActivity = null;
-
-  public TaskDescriptionPackage(Activity activity) {
-    super();
-
-    mActivity = activity;
-  }
-
   @Override
-  public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
-    return new ArrayList<>();
+  public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+      List<NativeModule> modules = new ArrayList<>();
+      modules.add(new TaskDescriptionModule(reactContext));
+
+      return modules;
   }
 
   @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
-    return Arrays.<ViewManager>asList(
-      new TaskDescriptionManager(mActivity)
-    );
+    return Collections.emptyList();
   }
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
-    return Arrays.asList();
+    return Collections.emptyList();
   }
 }
