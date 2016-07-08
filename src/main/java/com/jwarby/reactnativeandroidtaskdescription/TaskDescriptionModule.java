@@ -4,37 +4,34 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.graphics.Color;
 import android.os.Build;
-import android.view.ViewStub;
-import android.util.Log;
 
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.uimanager.SimpleViewManager;
-import com.facebook.react.uimanager.ThemedReactContext;
-import com.facebook.react.uimanager.ViewManager;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.UiThreadUtil;
 
 import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nullable;
 
-public class TaskDescriptionManager extends SimpleViewManager<ViewStub> {
+public class TaskDescriptionModule extends ReactContextBaseJavaModule {
 
   private static String REACT_CLASS = "TaskDescriptionAndroid";
 
-  private Activity mActivity = null;
   private Integer mColor = null;
   private String mLabel = null;
 
-  public TaskDescriptionManager(Activity activity) {
-    super();
-
-    mActivity = activity;
+  public TaskDescriptionModule(ReactApplicationContext context) {
+    super(context);
   }
 
   private void updateTaskDescription() {
-    mActivity.runOnUiThread(new Runnable() {
+    final Activity activity = getCurrentActivity();
+
+    if (activity == null) return;
+
+    UiThreadUtil.runOnUiThread(new Runnable() {
       @Override
       public void run() {
         if (Build.VERSION.SDK_INT >= 21) {
@@ -48,7 +45,7 @@ public class TaskDescriptionManager extends SimpleViewManager<ViewStub> {
             return;
           }
 
-          mActivity.setTaskDescription(taskDesc);
+          activity.setTaskDescription(taskDesc);
         }
       }
     });
@@ -59,20 +56,15 @@ public class TaskDescriptionManager extends SimpleViewManager<ViewStub> {
     return REACT_CLASS;
   }
 
-  @Override
-  public ViewStub createViewInstance(ThemedReactContext context) {
-    return new ViewStub(context);
-  }
-
-  @ReactProp(name = "backgroundColor")
-  public void setBackgroundColor(ViewStub view, @Nullable String hex) {
+  @ReactMethod
+  public void setBackgroundColor(@Nullable String hex) {
     mColor = Color.parseColor(hex);
 
     updateTaskDescription();
   }
 
-  @ReactProp(name = "label")
-  public void setLabel(ViewStub view, @Nullable String text) {
+  @ReactMethod
+  public void setLabel(@Nullable String text) {
     mLabel = text;
 
     updateTaskDescription();

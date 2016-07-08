@@ -17,7 +17,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   render() {
     return (
       <View>
-        <TaskDescriptionAndroid background="#8fa224" />
+        <TaskDescriptionAndroid backgroundColor="#8fa224" />
         <Text>My awesome app!</Text>
       </View>
     )
@@ -35,9 +35,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   render() {
     return (
       <View>
-        <TaskDescriptionAndroid>
-          <Text>Super Awesome App</Text>
-        </TaskDescriptionAndroid>
+        <TaskDescriptionAndroid label="Super Awesome App" />
         <Text>My awesome app!</Text>
       </View>
     )
@@ -55,9 +53,7 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
   render() {
     return (
       <View>
-        <TaskDescriptionAndroid background="#5c34d2">
-          <Text>Super Awesome App</Text>
-        </TaskDescriptionAndroid>
+        <TaskDescriptionAndroid backgroundColor="#5c34d2" label="Super Awesome App" />
 
         <Text>My awesome app!</Text>
       </View>
@@ -74,6 +70,8 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
 ```bash
 npm install --save react-native-android-taskdescription
 ```
+
+**IMPORTANT:** for RN <= 0.28, please use version 0.2.0 and follow the README installation and usage instructions from that version, ie ``npm install --save react-native-android-taskdescription@0.2.0```
 
 ### Update android/settings.gradle
 
@@ -93,23 +91,24 @@ dependencies {
 }
 ```
 
-### Register module in `MainActivity.java`
+### Register module in `MainApplication.java`
 
 ```java
-  import com.jwarby.reactnativetaskdescription.TaskDescriptionPackage; // <------- Add the import
+  import com.jwarby.reactnativeandroidtaskdescription.TaskDescriptionPackage; // <--- import package
 
   // ...
   @Override
   protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
       new MainReactPackage(),
-      new TaskDescriptionPackage(this) // <------- Add package - make sure you pass 'this' to the constructor!
+      new TaskDescriptionPackage() // <--- add package
     );
   }
 ```
 
 ## Changelog
 
-- `20th May 2016` - `v0.2.0` - Import React, Component and PropTypes from `react` instead of `react-native` as per changes in `react-native@0.25+`. 
+- `8th July 2016` - `v1.0.0` - Changes to make plugin compatible with React Native 0.29, change API for setting text - use label prop instead of <Text /> child component
+- `20th May 2016` - `v0.2.0` - Import React, Component and PropTypes from `react` instead of `react-native` as per changes in `react-native@0.25+`.
 RN 0.25 spat out warnings about importing these from `react-native`, and 0.26 removed the warnings and just failed instead.
 - `14th Apr 2016` - `v0.1.0` - First released version
