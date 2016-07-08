@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/jwarby/react-native-android-taskdescription/issues"
   },
-  "homepage": "https://github.com/jwarby/react-native-android-taskdescription#readme"
+  "homepage": "https://github.com/jwarby/react-native-android-taskdescription#readme",
+  "dependencies": {}
 }
