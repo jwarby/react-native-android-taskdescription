@@ -71,9 +71,20 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
 npm install --save react-native-android-taskdescription
 ```
 
-**IMPORTANT:** for RN <= 0.28, please use version 0.2.0 and follow the README installation and usage instructions from that version, ie ``npm install --save react-native-android-taskdescription@0.2.0```
+**IMPORTANT:** for RN <= 0.28, please use version 0.2.0 and follow the README installation and usage instructions from that version, ie `npm install --save react-native-android-taskdescription@0.2.0`
 
-### Update android/settings.gradle
+### Setup
+
+#### Option 1 (recommended): Automatically
+
+After installing, run:
+
+```bash
+react-native link
+```
+
+#### Option 2: Manually
+##### Update android/settings.gradle
 
 ```
 ...
@@ -81,7 +92,7 @@ include ':react-native-android-taskdescription'
 project(':react-native-android-taskdescription').projectDir = new File(settingsDir, '../node_modules/react-native-android-taskdescription')
 ```
 
-### Update android/app/build.gradle
+##### Update android/app/build.gradle
 
 ```
 ...
@@ -91,7 +102,7 @@ dependencies {
 }
 ```
 
-### Register module in `MainApplication.java`
+#### Register module in `MainApplication.java`
 
 ```java
   import com.jwarby.reactnativeandroidtaskdescription.TaskDescriptionPackage; // <--- import package
@@ -108,7 +119,20 @@ dependencies {
 
 ## Changelog
 
-- `8th July 2016` - `v1.0.0` - Changes to make plugin compatible with React Native 0.29, change API for setting text - use label prop instead of <Text /> child component
-- `20th May 2016` - `v0.2.0` - Import React, Component and PropTypes from `react` instead of `react-native` as per changes in `react-native@0.25+`.
+### `v1.0.1 (20th Oct 2016)`
+
+Add support for linking project using `react-native link`.
+
+### `v1.0.0 (8th Jul 2016)`
+
+- Changes to make plugin compatible with React Native 0.29
+- Change API for setting text - use label prop instead of `<Text />` child component
+
+### `v0.2.0 (20th May 2016)`
+
+Import React, Component and PropTypes from `react` instead of `react-native` as per changes in `react-native@0.25+`.
 RN 0.25 spat out warnings about importing these from `react-native`, and 0.26 removed the warnings and just failed instead.
-- `14th Apr 2016` - `v0.1.0` - First released version
+
+### `v0.1.0 (14th Apr 2016)`
+
+First released version.
