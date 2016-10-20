@@ -71,9 +71,20 @@ import TaskDescriptionAndroid from 'react-native-android-taskdescription'
 npm install --save react-native-android-taskdescription
 ```
 
-**IMPORTANT:** for RN <= 0.28, please use version 0.2.0 and follow the README installation and usage instructions from that version, ie ``npm install --save react-native-android-taskdescription@0.2.0```
+**IMPORTANT:** for RN <= 0.28, please use version 0.2.0 and follow the README installation and usage instructions from that version, ie `npm install --save react-native-android-taskdescription@0.2.0`
 
-### Update android/settings.gradle
+### Setup
+
+#### Automatically
+
+After installing, run:
+
+```bash
+react-native link
+```
+
+#### Manually
+##### Update android/settings.gradle
 
 ```
 ...
@@ -81,7 +92,7 @@ include ':react-native-android-taskdescription'
 project(':react-native-android-taskdescription').projectDir = new File(settingsDir, '../node_modules/react-native-android-taskdescription')
 ```
 
-### Update android/app/build.gradle
+##### Update android/app/build.gradle
 
 ```
 ...
@@ -91,7 +102,7 @@ dependencies {
 }
 ```
 
-### Register module in `MainApplication.java`
+#### Register module in `MainApplication.java`
 
 ```java
   import com.jwarby.reactnativeandroidtaskdescription.TaskDescriptionPackage; // <--- import package
