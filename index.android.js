@@ -1,13 +1,13 @@
-import { Component, PropTypes } from 'react';
-import { NativeModules } from 'react-native';
+import { Component, PropTypes } from 'react'
+import { NativeModules } from 'react-native'
 
-const TaskDescriptionModule = NativeModules.TaskDescriptionAndroid;
+const TaskDescriptionModule = NativeModules.TaskDescriptionAndroid
 
 class TaskDescription extends Component {
   static propTypes = {
     backgroundColor: PropTypes.string,
-    label: PropTypes.string,
-  };
+    label: PropTypes.string
+  }
 
   componentDidMount() {
     this.update()
@@ -32,4 +32,4 @@ class TaskDescription extends Component {
   }
 }
 
-module.exports = TaskDescription;
+module.exports = TaskDescription
