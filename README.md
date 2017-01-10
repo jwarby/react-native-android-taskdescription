@@ -89,7 +89,7 @@ react-native link
 ```
 ...
 include ':react-native-android-taskdescription'
-project(':react-native-android-taskdescription').projectDir = new File(settingsDir, '../node_modules/react-native-android-taskdescription')
+project(':react-native-android-taskdescription').projectDir = new File(settingsDir, '../node_modules/react-native-android-taskdescription/android')
 ```
 
 ##### Update android/app/build.gradle
