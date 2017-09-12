@@ -119,6 +119,10 @@ dependencies {
 
 ## Changelog
 
+### `v1.0.2 (12th Sep 2017)`
+
+- Updates for React Native >= 0.47 - remove `@overrides` declaration from `createJSModules` - `1973b66d` (thanks @christophervalles)
+
 ### `v1.0.1 (20th Oct 2016)`
 
 Add support for linking project using `react-native link`.
