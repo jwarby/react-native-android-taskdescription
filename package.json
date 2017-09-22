@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-taskdescription",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TaskDescription Android React Native module",
   "main": "index.android.js",
   "scripts": {
@@ -22,5 +22,7 @@
     "url": "https://github.com/jwarby/react-native-android-taskdescription/issues"
   },
   "homepage": "https://github.com/jwarby/react-native-android-taskdescription#readme",
-  "dependencies": {}
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  }
 }
