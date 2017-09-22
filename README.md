@@ -119,6 +119,10 @@ dependencies {
 
 ## Changelog
 
+### `v1.0.3 (22nd Sep 2017)`
+
+- Migrate from React.PropTypes to `prop-types` package - `a287c10a` (thanks @sladkoff)
+
 ### `v1.0.2 (12th Sep 2017)`
 
 - Updates for React Native >= 0.47 - remove `@overrides` declaration from `createJSModules` - `1973b66d` (thanks @christophervalles)
