@@ -1,3 +1,7 @@
+# `v1.0.5 (22nd Nov 2018)`
+
+- If root project defines compile/targetSdkVersion/buildToolsVersion, use those
+
 # `v1.0.4 (24th May 2018)`
 
 - Added a dummy implementation for iOS so that apps using this module can be

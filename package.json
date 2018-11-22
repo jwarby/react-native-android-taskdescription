@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-taskdescription",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "TaskDescription Android React Native module",
   "main": "index.js",
   "scripts": {
