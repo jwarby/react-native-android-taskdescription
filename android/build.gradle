@@ -1,12 +1,20 @@
 apply plugin: 'com.android.library'
 
+def DEFAULT_COMPILE_SDK_VERSION = 27
+def DEFAULT_BUILD_TOOLS_VERSION = "28.0.3"
+def DEFAULT_TARGET_SDK_VERSION = 27
+
+def getProp(prop, defaultValue) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : defaultValue
+}
+
 android {
-  compileSdkVersion 23
-  buildToolsVersion "23.0.1"
+  compileSdkVersion getProp('compileSdkVersion', DEFAULT_COMPILE_SDK_VERSION)
+  buildToolsVersion getProp('buildToolsVersion', DEFAULT_BUILD_TOOLS_VERSION)
 
   defaultConfig {
     minSdkVersion 16
-    targetSdkVersion 21
+    targetSdkVersion getProp('targetSdkVersion', DEFAULT_TARGET_SDK_VERSION)
     versionCode 1
     versionName "1.0"
   }
